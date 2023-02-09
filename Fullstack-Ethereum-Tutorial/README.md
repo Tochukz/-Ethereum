@@ -4,6 +4,11 @@
 [Github Code Example](https://github.com/dabit3/full-stack-ethereum)  
 [Defining the web3 stack](https://edgeandnode.com/blog/defining-the-web3-stack/)
 
+## Aim and goal
+1. Build Smart contracts
+2. Deploy smart contract to local network and test network
+3. Read and write data to smart contracts that have been deployed to the block chain
+
 ## Tech Stack
 __The Stack__  
 * Client Framework - React
@@ -30,10 +35,12 @@ __Prerequites__
 2. [MetaMask](https://metamask.io) Chrome extensions installed in your browser.
 
 ## Getting Started
+__Scaffolding the project__  
 Create a react application
 ```
 $ npx create-react-app  react-dapp
-```
+```  
+__Node package for dependencies__
 Install dependencies on the react-app
 ```
 $ npm install ethers
@@ -42,7 +49,9 @@ $ npm install @nomiclabs/hardhat-waffle
 $ npm install @nomiclabs/hardhat-ethers
 $ npm install ethereum-waffle
 $ npm install chai
-```
+```  
+
+__Ethereum development environment__  
 Initialize a new Ethereum Development Environment with Hardhat
 ```
 $ cd react-dapp
@@ -58,23 +67,50 @@ To compile your smart contract
 ```
 $ npx hardhat compile
 ```  
-This generate an Application Binary Interface (ABI)
+The compile command takes our smart contract and
+generate a machine readable code called _Application Binary Interface (ABI)_ and additional artifacts.  
+Artifacts goes into the artifacts director specified by the `paths.artifacts` value in the `hardhat.config.js` file.  
 
-To launch a local node or network
+__Local blockchain network__  
+To launch a local node or network so that we can deploy to it for testing.  
 ```
 $ npx hardhat node
 ```
-This should produce a list of addresses and private key under _Accounts_  
+This should produce a local test network with list of about 20 accounts that we can work with. Each account includes an address and a private key.   
+To keep the network running, do not close the terminal window.
 
-To deploy to a network, openup another terminal window
+__Deployment to blockchain network__  
+To deploy to a network, open another terminal window and execute `hardhat run` command
 ```
 $ npx hardhat run script/deploy.js --network localhost
 ```  
-You should see the address of the deployed contract in the output on the terminal e.g
-```
-...timestamp 1693899285 deployed to 0x5FbDB2315678afecb367f032d93F642f64180aa3`
-```
-You should see logs of the deploy on the node's terminal.
+This should output whatever `console.log` value from the deployment script. It is common to log the address of the smart contract.  
+
+You should also activity logs of the deployment on the previous terminal where the local network is running.   
 
 __Installing MetaMask Browser Extension__  
-Install the `MetaMask` chrome extension and create a new wallet. Your _Secret Recovery Phrase_ makes it easy to back up and restore your account.
+Metamask  is a tool used to interact with a block chain account.  
+To use Metamask, install the `MetaMask` chrome extension, search for _metamask chrome extension_.  
+After installing the extension, create a new wallet. Your _Secret Recovery Phrase_ makes it easy to back up and restore your account.  
+
+__Adding a hardhat account to MetaMask__    
+* Open Metamask
+* Click on the Network selection drop down. (You may have Ethereum Mainnet selected by default.)
+* Click _Add network_  
+* Select _Add a network manually_  
+* Enter the followinf values
+```
+Network name: Localhost
+New RPC URL: http://localhost:8545/
+Chain ID: 1337
+Currency Symbol: ETH Hardhat
+Block Explorer URL:
+```
+* Click Save
+
+__Importing new accounts__  
+* Click on the profile picture
+* Click on _Import account__
+* Select type should have _Private key_ selected
+* Copy the private key form the first account from your hardhat local node and paste it in the _Private key_ input field.  
+* Click import 
