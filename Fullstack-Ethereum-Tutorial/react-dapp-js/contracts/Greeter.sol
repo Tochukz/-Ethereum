@@ -15,7 +15,7 @@ contract Greeter {
     return greeting;
   }
 
-  function getGreeting(string memory _greeting) public {
+  function setGreeting(string memory _greeting) public {
     console.log("Changing greeting from %s to %s", greeting, _greeting);
     greeting = _greeting;
   }

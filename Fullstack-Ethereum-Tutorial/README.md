@@ -113,4 +113,7 @@ __Importing new accounts__
 * Click on _Import account__
 * Select type should have _Private key_ selected
 * Copy the private key form the first account from your hardhat local node and paste it in the _Private key_ input field.  
-* Click import 
+* Click import
+
+__Real Test networks__  
+* [Ropsten Testnet](https://ropsten.etherscan.io/)
