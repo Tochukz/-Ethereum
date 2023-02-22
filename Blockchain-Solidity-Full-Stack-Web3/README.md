@@ -290,6 +290,14 @@ Some EVM compatible blockchain are Avalanche, Fantom and Polygon.
 This means that we can write our Solidity code and deploy to any of these Blockchain.   
 
 
-## Lesson 3: Remix Storage Factory  (Part1 : 03:05:36)  
+## Lesson 3: Remix Storage Factory  (Part 1 : 03:05:36)  
+#### Importing Contracts (Part 1: 03:07:30)  
+The ability for contracts to interacts with other contracts is known as composability.  
+
+#### Interacting with other contracts (Part 1: 03:16:37) 
 
 
+#### Inheritance and Overrides (Part 1: 03:25:24)  
+
+## Lesson 4: Remix Fund Me (Part 1: 03:31:56)
+#### Sending ETH through A function and Reverts  
