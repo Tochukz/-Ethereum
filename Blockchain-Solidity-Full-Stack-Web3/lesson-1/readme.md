@@ -20,7 +20,6 @@ Chain link is a modular decentralized oracle network that can bring in both exte
 __Hybrid smart contract__  
 Hybrid smart contracts are smart contracts that have an off-chain component.  
 
-
 __Smart contract platform__  
 The term _smart contract platform_ and _blockchain_ are often used interchangeable.   
 There are a few smart contract platforms available
