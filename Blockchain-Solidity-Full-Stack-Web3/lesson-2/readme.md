@@ -56,7 +56,6 @@ Data location can only be specified for array, struct or mapping types.
 #### Basic Solidity Mapping (Part 1: 02:50:18)
 A mapping is a data structure where a key is _mapped_ to a single value.  
 
-
 #### Deploying your first contract (Part 1: 02:53:38)   
 __To Deploy a contract to a testnet__  
 1. Select the _Solidity compilier_ menu
